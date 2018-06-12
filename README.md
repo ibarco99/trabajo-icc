@@ -1,2 +1,4 @@
-# trabajo-icc
-Casino
+# Trabajo-ICC
+# Casino
+from random import randint
+def juego_blackjack():
