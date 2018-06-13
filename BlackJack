@@ -1,0 +1,36 @@
+import random
+def BlackJack():
+	numeros=[random.randint(1,11)]
+	dealer=[]
+	mano=0
+	mano2=0
+	carta=1
+	print(numeros)
+	while carta == 1 and mano <= 21:
+		carta=int(input())
+		mano=sum(numeros)
+		if carta==1:
+			num=random.randint(1,11)
+			numeros.append(num)
+			mano=sum(numeros)
+			print(numeros)
+			print(mano)
+	if mano <= 21:
+		while mano2 <= mano:
+			num=random.randint(1,11)
+			dealer.append(num)
+			print(dealer)
+			mano2=sum(dealer)
+	if mano2<mano<21:
+		print(f"Tú:{mano} y Dealer:{mano2}")
+		print("GANASTE")
+	elif mano < 21 < mano2:
+		print(f"Tú:{mano} y Dealer:{mano2}")
+		print("GANASTE")
+	elif mano == 21:
+		print("BlackJack")
+	elif mano > 21:
+		print(f"¡TE PASASTE CON {mano}")
+	else:
+		print(f"Dealer:{mano2} y Tú:{mano}")
+		print("PERDISTE")
