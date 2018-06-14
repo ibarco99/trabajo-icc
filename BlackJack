@@ -34,3 +34,56 @@ def BlackJack():
 	else:
 		print(f"Dealer:{mano2} y Tú:{mano}")
 		print("PERDISTE")
+
+from random import randint
+def buscaminas():
+    def tupla_minada():
+        lista=["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20"]
+
+        contador=0
+        minas=0
+        while minas < 5:
+            mina = randint(0,5)
+            if mina == 1:
+                lista[contador]="*!"
+                minas=minas+1
+            contador=contador+1
+            if contador == 20:
+                contador = 0
+        tupla_llena=tuple(lista)
+        return tupla_llena
+
+    tupla = tupla_minada()
+    lista=[]
+    contador = 0
+    linea=" "
+
+    for iter in tupla:
+        contador=contador+1
+        linea=linea+" "+iter
+        if contador%4==0:
+            linea = " "
+
+
+    contador=1
+    perdiste=False
+    while contador <=3 and not perdiste:
+        numero = int(input("Ingrese número: "))
+        if tupla[numero-1] == "*!":
+            print ("Boom!!!")
+            perdiste = True
+        else:
+            contador=contador+1
+    if not perdiste:
+        print("Ganaste!!!")
+    else:
+        print("Perdiste")
+
+    contador2=0
+    for iter in tupla:
+        contador2=contador2+1
+        linea=linea+" "+iter
+        if contador2%4==0:
+            print(linea)
+            linea = " "
+    return
