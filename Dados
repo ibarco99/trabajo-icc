@@ -1,0 +1,26 @@
+import random
+
+def jugada(jugador):
+    lista=[]
+    lista=dados()
+    return lista
+def dados():
+    tirar_dados=input("Pusle Enter para Tirar los dados")
+    dado1=random.randint(1,6)
+    dado2=random.randint(1,6)
+    return dado1,dado2
+
+jugador1=input("Ingrese P1:")
+lista1=jugada(jugador1)
+print(lista1)
+
+jugador2=input("Ingrese P2:")
+lista2=jugada(jugador2)
+print(lista2)
+
+if sum(lista1) > sum(lista2):
+    print(f"WINNER WINNER CHICKEN DINNER {jugador1}")
+elif sum(lista1) < sum(lista2):
+    print(f"WINNER WINNER CHICKEN DINNER {jugador2}")
+else:
+    print("Try again")
