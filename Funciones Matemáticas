@@ -11,3 +11,11 @@ def MCD(a,b):
 num1=int(input("Introduce el primer número: "))
 num2=int(input("Introduce el segundo número: "))
 print("El MCD de",num1,"y",num2,"es",MCD(num1,num2))
+
+def area_circulo(radio):
+    area=3.1416*radio**2
+    print(f"El area del radio {radio} es: {area}")
+    return
+
+radio=float(input("Ingrese radio:"))
+area_circulo(radio)
