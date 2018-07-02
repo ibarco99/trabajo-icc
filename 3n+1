@@ -1,0 +1,18 @@
+i1=int(input("Número de inicio"))
+i2=int(input("Número de final"))
+dato=[]
+print("Si es par, se divide en 2")
+print("Si es impar, se se multiplica por 3 y se suma 1")
+print("Cantidad de procesos")
+for i in range(i1,i2+1):
+    cantidad=[i]
+    while i != 1:
+        if i%2==0:
+            i=i//2
+        elif i%2!=0:
+            i=3*i+1
+        cantidad.append(i)
+        dato.append(len(cantidad))
+    print(cantidad)
+dato.sort()
+print(f"{i1} {i2} {dato[-1]}")
