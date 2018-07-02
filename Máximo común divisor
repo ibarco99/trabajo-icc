@@ -1,0 +1,13 @@
+def MCD(a,b):
+    resto=0
+    if a and b != 0:
+        while(b>0):
+            resto=b
+            b=a%b
+            a=resto
+        return a
+    else:
+        return 0
+num1=int(input("Introduce el primer número: "))
+num2=int(input("Introduce el segundo número: "))
+print("El MCD de",num1,"y",num2,"es",MCD(num1,num2))
