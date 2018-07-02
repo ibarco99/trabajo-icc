@@ -1,0 +1,15 @@
+def invertir(num):
+    num_invertido=0
+    while num>0:
+        digito=num%10
+
+        num=int(num/10)
+        print(num)
+
+        num_invertido=num_invertido*10+digito
+        print(num_invertido)
+
+    return num_invertido
+
+dato2=int(input("Ingrese dato:"))
+print(f"El número invertido es: {invertir(dato2)}")
